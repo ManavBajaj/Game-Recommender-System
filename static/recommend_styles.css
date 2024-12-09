@@ -1,0 +1,306 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #222;
+}
+
+.logo {
+    font-size: 24px;
+    color: #ff69b4; /* Pink */
+    text-decoration: none;
+}
+
+.logo a{
+    color: #ff69b4;
+    text-decoration: none;
+}
+
+.container {
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #ff69b4;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #ff69b4;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #ccc;
+    margin-bottom: 10px;
+    margin-left: 35px;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+form {
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 40%; /* Adjust as needed */
+    background-color: #222; /* Form background matching your theme */
+    border: 2px solid white; /* White border */
+    border-radius: 15px; /* Curved border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow for depth */
+    text-align: left; /* Align labels and dropdowns inside the form */
+}
+
+.form-buttons {
+    justify-content: center;
+    text-align: center; /* Center the buttons within the form */
+    margin-top: 5px; /* Add some space between the inputs and buttons */
+}
+
+.form-group {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form p {
+    width: auto;
+    font-size: 1em;
+    color: #ccc;
+    margin-bottom: 20px; /* Space below the paragraph */
+    margin-right: 25px;
+    text-align: left; /* Center-align the instructional text */
+    background-color: #333; /* Optional: Different background for instructions */
+    padding: 10px; /* Padding for readability */
+    border-radius: 10px; /* Rounded edges to match form aesthetics */
+}
+
+label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+select {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ff69b4;
+    border-radius: 4px;
+    background-color: #222;
+    color: white;
+}
+
+.submit-button, .clear-button {
+    display: inline-block; /* Inline buttons */
+    padding: 10px 10px;
+    margin: 10px;
+    width: 20%;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover, .clear-button:hover {
+    background-color: black;
+    color: #ff69b4;
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Fallback for JS-disabled browsers */
+    min-height: 100vh; /* Ensure it starts with full viewport height */
+    height: auto; /* Adjusts to content height */
+    z-index: -1;
+    background-color: #111; /* Fallback background color */
+}
+
+
+html, body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+/* Style the output table */
+table {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 1px solid #ff69b4;
+    border-radius: 10px;
+}
+
+th, td {
+    padding: 12px 20px;  /* Add padding for better readability */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #222;
+    color: #ff69b4;
+}
+
+tr:hover {
+    background-color: #333;  /* Highlight rows on hover */
+}
+
+td {
+    background-color: #222;
+    color: #fff;
+}
+
+h3 {
+    text-align: center;
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+.clear-output-button {
+    display: inline-block; /* Inline buttons */
+    padding: 10px 10px;
+    margin: 10px;
+    width: 10%;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.clear-output-button:hover {
+    background-color: black;
+    color: #ff69b4;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.buttons {
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.watch-button, .detail-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.watch-button {
+    background-color: #ff69b4;
+    color: black;
+    text-decoration: none;
+}
+
+.detail-button {
+    background-color: transparent;
+    border: 2px solid #ff69b4;
+    color: #ff69b4;
+    margin-left: 10px;
+}
+
+.watch-button:hover {
+    background-color: black;
+    color: #ff69b4;
+}
+
+.detail-button:hover {
+    background-color: #ff69b4;
+    color: black;
+}
+
+/* Style for the selection table */
+#selection-table {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 1px solid #ff69b4;
+    border-radius: 10px;
+}
+
+#selection-table th, #selection-table td {
+    padding: 12px 20px;  /* Add padding for better readability */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#selection-table th {
+    background-color: #222;
+    color: #ff69b4;
+}
+
+#selection-table tr:hover {
+    background-color: #333;  /* Highlight rows on hover */
+}
+
+#selection-table td {
+    background-color: #222;
+    color: #fff;
+}
+
+main {
+    flex: 1; /* Allows content to grow and pushes footer down */
+    padding-bottom: 70px; /* Reserve space for the footer */
+}
+
+.footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #ccc;
+}

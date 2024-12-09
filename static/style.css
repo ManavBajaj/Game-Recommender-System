@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #222;
+}
+
+.logo {
+    font-size: 24px;
+    color: #ff69b4; /* Pink */
+}
+
+.logo a{
+    color: #ff69b4;
+    text-decoration: none;
+}
+
+.filter-button {
+    padding: 8px 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.social-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.language {
+    background-color: #ff69b4; /* Pink */
+    border-radius: 4px;
+    padding: 5px 10px;
+    color: white;
+}
+.details {
+    margin: 10px 0;
+}
+
+.buttons {
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.watch-button, .detail-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.watch-button {
+    background-color: #ff69b4;
+    color: black;
+    text-decoration: none;
+}
+
+.detail-button {
+    background-color: transparent;
+    border: 2px solid #ff69b4;
+    color: #ff69b4;
+    margin-left: 10px;
+}
+
+.watch-button:hover {
+    background-color: black;
+    color: #ff69b4;
+}
+
+.detail-button:hover {
+    background-color: #ff69b4;
+    color: black;
+}
+/* For Play2gether */
+
+/* Header Styling */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #ff69b4,#4e73df); /* Gradient background */
+    color: white;
+    background-color: #ff69b4;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+    gap: 50px;
+    padding: 50px;
+}
+
+.game-item {
+    position: relative; /* Ensures overlay is positioned relative to the item */
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures content stays within the card bounds */
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire container */
+    transition: transform 0.5s ease-in-out; /* Smooth zoom effect */
+}
+
+.image-container img:hover {
+    transform: scale(1.2); /* Zoom in on hover */
+}
+
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+}
+
+.image-container:hover .hover-overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.game-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.game-description {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.game-item:hover {
+    transform: scale(1.2);  /* Adds a subtle lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow for better focus */
+}
+
+
+@media (max-width: 1024px) {
+    .game-container {
+        grid-template-columns: repeat(3, 1fr); /* Adjusts to 3 items per row on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .game-container {
+        grid-template-columns: repeat(2, 1fr); /* Adjusts to 2 items per row on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .game-container {
+        grid-template-columns: 1fr; /* Adjusts to 1 item per row on small screens */
+    }
+}
+
+/* footer */
+.footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.footer .social-icons {
+    margin-top: 10px;
+}
+
+.footer .social-link {
+    margin: 0 10px;
+    font-size: 1.5em;
+    color: #ff69b4; /* Match your theme */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .social-link:hover {
+    color: #fff;
+}
+
+#particles-js {
+    position: fixed; /* Ensures it stays in the background, even on scroll */
+    width: 100%;
+    height: 100%; /* Start with 100% of the viewport */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Keep it behind all content */
+    background-color: #111; /* Fallback background color */
+}
+
+html, body {
+    height: 100%; /* Allow body height to extend */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll issues */
+}
