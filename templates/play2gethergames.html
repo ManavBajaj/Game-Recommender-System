@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/game.css">
+    <title>{{ games[1] }}</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="logo">PlayNext - Find Your Next Favorite Game</a>
+        <div class="nav-links">
+            <a href="/play2gether" class="watch-button">Play2gether</a>
+            <a href="/recommendation" class="detail-button">Want a Recommendation?</a>
+        </div>
+    </nav>
+    
+    <!-- Main Container -->
+    <div id="game-page">
+
+        <!-- Header Section -->
+        <div id="game-title">
+            <h1>{{ games[1] }}</h1>
+        </div>
+
+        <!-- Main Content Section -->
+        <div id="main-content">
+            
+            <!-- Image with Border -->
+            <div id="game-image">
+                <img src="{{ games[2] }}" alt="{{ games[1] }}">
+            </div>
+
+            <div id="game-info">
+                <p style="color: #ff69b4;"><strong>Description:</strong></p>
+                <p>
+                    {{ games[6] }}
+                </p><br>
+                
+                <p style="color: #ff69b4; font-weight: bold; display: inline;">Genre:</p>
+                <div style="display: inline-flex; gap: 10px; margin-left: 5px; margin-bottom: 5px;">
+                    <div style="border: 1px solid white; padding: 5px; border-radius: 4px;">{{ games[4] }}</div>
+                </div>
+
+                <p><strong style="color: #ff69b4;">Rating:</strong> ★★★★★ ({{ games[3] }}/10)</p>
+                
+                <p style="color: #ff69b4;"><strong>Platforms Played On:</strong></p>
+                <ul>
+                    <li>{{ platform[0] }}</li>
+                    <li>{{ platform[1] }}</li>
+                    <li>{{ platform[2] }}</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Why Play Section -->
+        <div id="why-play">
+            <h2>Why Play This Game?</h2>
+            <p>
+                {{ games[10] }}
+            </p>
+        </div>
+
+        <!-- Screenshots Section -->
+        <div id="screenshots">
+            <h2>Game Screenshots</h2>
+            <div class="screenshot-container">
+                <img src="{{ games[7]}}" alt="Screenshot 1">
+                <img src="{{ games[8]}}" alt="Screenshot 2">
+                <img src="{{ games[9]}}" alt="Screenshot 3">
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 PlayNext. All Rights Reserved.</p>
+            <p>Developed by Group 16 | MSc Data Science</p>
+        </div>
+    </footer>
+</body>
+</html>

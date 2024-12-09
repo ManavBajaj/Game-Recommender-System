@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/recommend_styles.css">
+    <title>Game Recommendation</title>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="http://127.0.0.1:5000/">PlayNext - Find Your Next Favorite Game</a>
+        </div>
+        <div class="nav-links">
+            <a href="http://127.0.0.1:5000/play2gether" class="watch-button">Play2gether</a>
+            <a href="http://127.0.0.1:5000/recommendation" class="detail-button">Want a Recommendation?</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Game Recommendation System</h1><br>
+        <h2>Discover New Adventures Based on Your Favorites!</h2><br>
+
+        <form id="game-form" method="GET" action="/saveitem">
+            <p>Select 3 of your favorite games to get personalized recommendations.</p>
+
+            <!-- Retain selected values in dropdowns -->
+            <div class="form-group">
+                <label for="game1">Game 1:</label>
+                <select id="game1" name="game1" required>
+                    <option value="">Search and select a game...</option>
+                    {% for game in game_names %}
+                    <option value="{{ game }}" {% if selected_games and selected_games[0]==game %} selected {% endif %}>
+                        {{ game }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="game2">Game 2:</label>
+                <select id="game2" name="game2" required>
+                    <option value="">Search and select a game...</option>
+                    {% for game in game_names %}
+                    <option value="{{ game }}" {% if selected_games and selected_games[1]==game %} selected {% endif %}>
+                        {{ game }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="game3">Game 3:</label>
+                <select id="game3" name="game3" required>
+                    <option value="">Search and select a game...</option>
+                    {% for game in game_names %}
+                    <option value="{{ game }}" {% if selected_games and selected_games[2]==game %} selected {% endif %}>
+                        {{ game }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-buttons">
+                <button type="submit" class="submit-button">Submit</button>
+                <button type="reset" class="clear-button" id="clear-button">Clear Form</button>
+                <!-- Change to type="button" -->
+            </div>
+        </form>
+
+        <!-- Display user's selected games -->
+        {% if selected_games_details %}
+        <h2 id="selection-header">Your Selection:</h2>
+        <table id="selection-table">
+            <tr>
+                <th>Game Name</th>
+                <th>Genre</th>
+            </tr>
+            {% for game in selected_games_details %}
+            <tr>
+                <td>{{ game['Game_Name'] }}</td>
+                <td>{{ game['Genre'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+
+        <!-- Add an ID to the output section -->
+        {% if recommendations %}
+        <br><br>
+        <h2 id="recommendation-header">Recommended Games Based on Your Selection:</h2>
+        <table id="recommendations-table">
+            <tr>
+                <th>Game Name</th>
+                <th>Genre</th>
+            </tr>
+            {% for recommendation in recommendations %}
+            <tr>
+                <td>{{ recommendation['Game_Name'] }}</td>
+                <td>{{ recommendation['Genre'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="form-buttons" id="clear-button-container">
+            <button type="button" class="clear-output-button" id="clear-output-button">Clear Output</button>
+            <!-- Clear Output Button -->
+        </div>
+        {% elif error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+    </main>
+
+    <!-- Particles.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/static/particles-config.js"></script>
+    <script src="/static/recommend_script.js"></script>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 PlayNext. All Rights Reserved.</p>
+            <p>Developed by Group 16 | MSc Data Science</p>
+        </div>
+    </footer>
+</body>
+
+</html>

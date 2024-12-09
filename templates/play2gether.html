@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Play2gether</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="http://127.0.0.1:5000/">PlayNext - Find Your Next Favorite Game</a></div>
+        <div class="nav-links">
+            <a href="http://127.0.0.1:5000/play2gether" class="watch-button">Play2gether</a>
+            <a href="http://127.0.0.1:5000/recommendation" class="detail-button">Want a Recommendation?</a>
+        </div>
+    </nav>
+    <header class="hero">
+        <h1>Our Top Multiplayer Picks for You</h1>
+        <p>Challenge your friends or team up with players from around the world!</p>
+    </header>
+    <div class="game-container">
+        {% for games in game %}
+        <div class="game-item">
+            <a href="/{{ games[1] }}">
+                <div class="image-container">
+                    <img src="{{ games[3] }}" alt="Game Poster">
+                    <div class="hover-overlay">
+                        <h3 class="game-title">{{ games[1] }}</h3>
+                        <p class="game-description">{{ games[2] }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/static/particles-config.js"></script>
+    <script src="/static/recommend_script.js"></script>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 PlayNext. All Rights Reserved.</p>
+            <p>Developed by Group 16 | MSc Data Science</p>
+        </div>
+    </footer>
+</body>
+</html>
+</body>
+</html>
